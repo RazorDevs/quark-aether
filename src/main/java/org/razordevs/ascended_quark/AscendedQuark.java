@@ -11,6 +11,7 @@ import net.minecraft.world.level.block.Block;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.data.event.GatherDataEvent;
+import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -23,6 +24,8 @@ import org.razordevs.ascended_quark.datagen.AQItemModelData;
 import org.razordevs.ascended_quark.datagen.AQLangData;
 import org.razordevs.ascended_quark.datagen.AQRecipeData;
 import org.razordevs.ascended_quark.datagen.loot.AQLootTableData;
+import org.razordevs.ascended_quark.datagen.loot.modifiers.AQGlobalLootModifiers;
+import org.razordevs.ascended_quark.datagen.loot.modifiers.AQLootDataProvider;
 import org.razordevs.ascended_quark.datagen.tags.AQBlockTagData;
 import org.razordevs.ascended_quark.datagen.tags.AQItemTagData;
 import org.razordevs.ascended_quark.mixin.ZetaRegistryAccessor;
@@ -50,6 +53,7 @@ public class AscendedQuark {
     public static final Zeta ZETA = new ForgeZeta(MODID, LogManager.getLogger("aq-zeta"));
 
     public AscendedQuark() {
+        IEventBus bus = FMLJavaModLoadingContext.get().getModEventBus();
         instance = this;
         ZETA.start();
 
@@ -57,8 +61,10 @@ public class AscendedQuark {
         proxy.start();
 
         MinecraftForge.EVENT_BUS.addListener(this::missingMappings);
+        bus.addListener(this::dataSetup);
 
-        FMLJavaModLoadingContext.get().getModEventBus().addListener(this::dataSetup);
+        AQGlobalLootModifiers.LOOT_MODIFIERS.register(bus);
+
         MinecraftForge.EVENT_BUS.register(this);
     }
 
@@ -97,6 +103,8 @@ public class AscendedQuark {
         generator.addProvider(event.includeServer(), new AQRecipeData(output, itemMap, blockMap));
         generator.addProvider(event.includeServer(), AQLootTableData.create(output, blockMap));
         AQBlockTagData blockTags = new AQBlockTagData(output, lookupProvider, fileHelper, blockMap);
+        generator.addProvider(event.includeServer(), new AQLootDataProvider(output, itemMap));
+
 
         generator.addProvider(event.includeServer(), blockTags);
         generator.addProvider(event.includeServer(), new AQItemTagData(output, lookupProvider, blockTags.contentsGetter(), fileHelper, itemMap, blockMap));

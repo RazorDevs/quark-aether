@@ -1,0 +1,23 @@
+{
+  "type": "ascended_quark:pickarang_aether_dungeon_loot",
+  "chanceToSpawn": 0.2,
+  "conditions": [
+    {
+      "condition": "forge:loot_table_id",
+      "loot_table_id": "aether:chests/dungeon/bronze/bronze_dungeon"
+    }
+  ],
+  "items": [
+    {
+      "data": {
+        "Count": 1,
+        "id": "ascended_quark:valkyrie_pickarang",
+        "tag": {
+          "Damage": 0
+        }
+      },
+      "weight": 5
+    }
+  ],
+  "totalWeight": 70
+}

@@ -1,0 +1,33 @@
+{
+  "type": "ascended_quark:pickarang_aether_dungeon_loot",
+  "chanceToSpawn": 0.3,
+  "conditions": [
+    {
+      "condition": "forge:loot_table_id",
+      "loot_table_id": "aether:chests/dungeon/silver/silver_dungeon"
+    }
+  ],
+  "items": [
+    {
+      "data": {
+        "Count": 1,
+        "id": "ascended_quark:valkyrie_pickarang",
+        "tag": {
+          "Damage": 0
+        }
+      },
+      "weight": 6
+    },
+    {
+      "data": {
+        "Count": 1,
+        "id": "ascended_quark:phoenix_flamerang",
+        "tag": {
+          "Damage": 0
+        }
+      },
+      "weight": 4
+    }
+  ],
+  "totalWeight": 70
+}

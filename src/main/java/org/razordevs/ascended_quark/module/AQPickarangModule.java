@@ -144,10 +144,13 @@ public class AQPickarangModule extends ZetaModule {
         return false;
     }
 
+    /* This doesn't work, as it empties the current loot table and just puts in the pickarang instead of adding it
     @PlayEvent
     public void onLootTableLoad(ZLootTableLoad event) {
-
+        RegistryUtil.registerModifiedLootTable(AetherLoot.BRONZE_DUNGEON, AQPickarangModule.valk_pickarang, 5, 1, event);
+        RegistryUtil.registerModifiedLootTable(AetherLoot.SILVER_DUNGEON, AQPickarangModule.phoenix_flamerang, 5, 1, event);
     }
+     */
 
     @ZetaLoadModule(clientReplacement = true)
     public static class Client extends AQPickarangModule {
