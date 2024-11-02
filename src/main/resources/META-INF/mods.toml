@@ -5,11 +5,11 @@ issueTrackerURL="https://github.com/RazorDevs/Ascended-Quark/issues"
 
 [[mods]]
 modId="ascended_quark"
-version="1.0.2"
+version="1.1.0"
 displayName="Ascended Quark"
 authors="RazorDevs"
 description='''
-A small mod that aims to bring compatibility between quark and the aether mod!
+A small mod that aims to bring compatibility between Quark and the Aether mod! (And Addons too!)
 '''
 logoFile="ascended_quark.png"
 credits="A special thanks goes to the creators behind Quark and the Aether mods!"
@@ -52,7 +52,7 @@ side="BOTH"
 [[dependencies.ascended_quark]]
 modId="aether"
 mandatory=true
-versionRange="[1.4.0,)"
+versionRange="[1.5.0,)"
 ordering="AFTER"
 side="BOTH"
 
