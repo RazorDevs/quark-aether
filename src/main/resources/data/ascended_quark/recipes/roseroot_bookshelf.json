@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "A": {
+      "item": "deep_aether:roseroot_planks"
+    },
+    "B": {
+      "item": "minecraft:book"
+    }
+  },
+  "pattern": [
+    "AAA",
+    "BBB",
+    "AAA"
+  ],
+  "result": {
+    "item": "ascended_quark:roseroot_bookshelf",
+    "conditions": [
+      {
+        "type": "ascended_quark:flag",
+        "flag": "icestone_bricks"
+      }
+    ]
+  }
+}

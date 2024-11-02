@@ -8,6 +8,7 @@ import net.minecraft.data.recipes.*;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.Block;
@@ -91,8 +92,20 @@ public class AQRecipeData extends RecipeProvider {
         this.chest(blockMap.get(type+"_trapped_chest"), planks, flag, consumer);
         this.hollowLog(blockMap.get("hollow_" + type + "_log"), log, flag, consumer);
         this.ladder(blockMap.get(type + "_ladder"), planks, flag, consumer);
+        this.bookshelf(blockMap.get(type + "_bookshelf"), planks, flag, consumer);
     }
 
+    private void bookshelf(Block bookshelf, Block planks, String flag, Consumer<FinishedRecipe> consumer) {
+        ConditionalShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, bookshelf, 1)
+                .define('A', planks)
+                .define('B', Items.BOOK)
+                .pattern("AAA")
+                .pattern("BBB")
+                .pattern("AAA")
+                .condition(new ResourceLocation(Quark.MOD_ID, "flag"), "variant_bookshelves")
+                .condition(DEFAULT_FLAG, flag)
+                .unlockedBy(getHasName(planks), has(planks)).save(consumer);
+    }
 
     void slab(Block slab, Block texture, Consumer<FinishedRecipe> consumer) {
         slabBuilder(RecipeCategory.BUILDING_BLOCKS, slab, Ingredient.of(texture)).unlockedBy(getHasName(texture), has(texture)).save(consumer);
