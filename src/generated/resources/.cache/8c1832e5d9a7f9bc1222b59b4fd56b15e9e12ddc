@@ -1,23 +1,23 @@
-// 1.20.1	2024-11-03T15:04:01.7897479	Ascended Quark Block Tags
-09d318fe47ecad35a833cddc31d8a3fce443896c data/aether/tags/blocks/treated_as_aether_block.json
+// 1.20.1	2024-11-03T19:47:48.4935834	Ascended Quark Block Tags
+a1e779a8ce6a5b7d06ce78112988df8f07c7dfd4 data/aether/tags/blocks/treated_as_aether_block.json
 2049b9e71cb35d9e4405f3cd3e0bee78b2d284dd data/forge/tags/blocks/bookshelves.json
-a17f7b5d0541cd5e51bb8d54690a7e983c568ddc data/forge/tags/blocks/chests.json
-536461fbcf5fecc31bf7576439a383fcb2c01be6 data/forge/tags/blocks/chests/trapped.json
-a17f7b5d0541cd5e51bb8d54690a7e983c568ddc data/forge/tags/blocks/chests/wooden.json
+116952e655b482a919c5e4824616a4c363b56025 data/forge/tags/blocks/chests.json
+ac06d1f820eeb0f3942179b2248a9d0cdf52e670 data/forge/tags/blocks/chests/trapped.json
+116952e655b482a919c5e4824616a4c363b56025 data/forge/tags/blocks/chests/wooden.json
 8bf99587d339bafc2b477f18244b67ff2393c94e data/minecraft/tags/blocks/climbable.json
 8bf99587d339bafc2b477f18244b67ff2393c94e data/minecraft/tags/blocks/fall_damage_resetting.json
-a17f7b5d0541cd5e51bb8d54690a7e983c568ddc data/minecraft/tags/blocks/guarded_by_piglins.json
-9051b930fd15217dec975da84cdb061d5e325160 data/minecraft/tags/blocks/mineable/axe.json
-8e3cedc3cd25351eb341b06a99ea496725cdf159 data/minecraft/tags/blocks/mineable/hoe.json
+116952e655b482a919c5e4824616a4c363b56025 data/minecraft/tags/blocks/guarded_by_piglins.json
+0350837b2eb7bba0588e7f554702e64dd8d5719f data/minecraft/tags/blocks/mineable/axe.json
+85cfac8409523fadc0fe11576e5bf8aa275a7b4b data/minecraft/tags/blocks/mineable/hoe.json
 d3a6668cb5afd9b56361b3db7385f85fec024646 data/minecraft/tags/blocks/mineable/pickaxe.json
 8057957e613a17633931268cd54255f339692dfc data/minecraft/tags/blocks/mineable/shovel.json
 309c1bd21e12c013a0019c2c6fd3bd1db78f1dcb data/minecraft/tags/blocks/slabs.json
 19b6e1dce9d6feb8e678e302bb77c088da4c9254 data/minecraft/tags/blocks/stairs.json
 ca45c3c823b06fb97573173a962b9e539dd73634 data/minecraft/tags/blocks/walls.json
-061e64f63a74acbafc58b4bd229b1319e0c4fe6f data/quark/tags/blocks/hedges.json
+7855626123cfb7d0ee6b1f5a541970920dcb9c63 data/quark/tags/blocks/hedges.json
 8baa253d0417220e4508dde4fdf50e835b29da2f data/quark/tags/blocks/hollow_logs.json
 8bf99587d339bafc2b477f18244b67ff2393c94e data/quark/tags/blocks/ladders.json
-26306c987dbd6002fe6621ae896b2732f8257b6c data/quark/tags/blocks/posts.json
+d97a1f42fd7fa5034a99f96b7e9c2410b04d829c data/quark/tags/blocks/posts.json
 9b05a108aee814b70443eb720ce75ecad104361a data/quark/tags/blocks/stools.json
 e292f66ad63f79249080a48675798f2332958756 data/quark/tags/blocks/vertical_slabs.json
 2c5c6e2528d5ce0f8dd69539c7d4b117f8b1acc3 data/quark/tags/blocks/wooden_vertical_slabs.json

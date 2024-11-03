@@ -92,7 +92,7 @@ public class AQItemModelData extends ItemModelProvider {
     }
 
     public void itemChest(Block block) {
-        this.withExistingParent(this.blockName(block), this.mcLoc("block/" + this.blockName(Blocks.CHEST)));
+        this.withExistingParent(this.blockName(block), this.mcLoc("item/" + this.blockName(Blocks.CHEST)));
     }
 
     public void item(Item item) {

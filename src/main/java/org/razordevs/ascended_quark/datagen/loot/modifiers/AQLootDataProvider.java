@@ -33,7 +33,7 @@ public class AQLootDataProvider extends GlobalLootModifierProvider {
                         WeightedEntry.wrap(new ItemStack(AQPickarangModule.valk_pickarang.asItem()), 1)
                 ),
                 110,
-                0.05f
+                0.01f
         ));
 
         add("pickarang_silver_loot_modifiers", new AQDungeonLootModifier(
@@ -44,7 +44,7 @@ public class AQLootDataProvider extends GlobalLootModifierProvider {
 
                 ),
                 110,
-                0.05f
+                0.01f
         ));
     }
 }
