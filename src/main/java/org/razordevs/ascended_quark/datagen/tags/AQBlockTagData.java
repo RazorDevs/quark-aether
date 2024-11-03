@@ -97,7 +97,8 @@ public class AQBlockTagData extends BlockTagsProvider {
         });
 
         tag(BlockTags.MINEABLE_WITH_AXE).add(
-                blockMap.get("blue_berry_crate")
+                blockMap.get("blue_berry_crate"),
+                blockMap.get("goldenleaf_berries_crate")
         );
         blockMap.keySet().forEach(block -> {
             for(String type : AQItemTagData.Wood) {

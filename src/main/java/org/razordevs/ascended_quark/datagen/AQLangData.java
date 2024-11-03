@@ -81,6 +81,7 @@ public class AQLangData extends NitrogenLanguageProvider {
         this.add("lore.block.ascended_quark.holystone_furnace", "A versatile furnace that can also use Ambrosium as fuel. Also looks fancier in white.");
         this.add("lore.block.ascended_quark.ambrosium_lamp", "A lamp made out of Holystone and Ambrosium. Ambrosium Blocks can increase its light up to 4 times.");
         this.add("lore.block.ascended_quark.blue_berry_crate", "A handy crate for storing blue berries! A very good decoration block!");
+        this.add("lore.block.ascended_quark.goldenleaf_berries_crate", "A handy crate for storing Goldenleaf berries! A very good decoration block!");
         this.add("lore.block.ascended_quark.quicksoil_framed_glass", "Combine Iron Ingots and Quicksoil Glass, and you get yourself some fancy Quicksoil Framed Glass. Great for some more rustic or medieval builds.");
         this.add("lore.block.ascended_quark.quicksoil_framed_glass_pane", "A thin decorative variant of Quicksoil Framed Glass. Great for some more rustic or medieval builds.");
         this.add("lore.block.ascended_quark.skyroot_chest", "A nice looking chest made out of Skyroot. Perfect blend for your storage room.");

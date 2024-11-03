@@ -30,21 +30,21 @@ public class AQLootDataProvider extends GlobalLootModifierProvider {
         add("pickarang_bronze_loot_modifiers", new AQDungeonLootModifier(
                 new LootItemCondition[] { LootTableIdCondition.builder(AetherLoot.BRONZE_DUNGEON).build() },
                 List.of(
-                        WeightedEntry.wrap(new ItemStack(AQPickarangModule.valk_pickarang.asItem()), 5)
+                        WeightedEntry.wrap(new ItemStack(AQPickarangModule.valk_pickarang.asItem()), 1)
                 ),
-                70,
-                0.2f
+                110,
+                0.05f
         ));
 
         add("pickarang_silver_loot_modifiers", new AQDungeonLootModifier(
                 new LootItemCondition[] { LootTableIdCondition.builder(AetherLoot.SILVER_DUNGEON).build() },
                 List.of(
-                        WeightedEntry.wrap(new ItemStack(AQPickarangModule.valk_pickarang.asItem()), 6),
-                        WeightedEntry.wrap(new ItemStack(AQPickarangModule.phoenix_flamerang.asItem()), 4)
+                        WeightedEntry.wrap(new ItemStack(AQPickarangModule.valk_pickarang.asItem()), 1),
+                        WeightedEntry.wrap(new ItemStack(AQPickarangModule.phoenix_flamerang.asItem()), 1)
 
                 ),
-                70,
-                0.3f
+                110,
+                0.05f
         ));
     }
 }

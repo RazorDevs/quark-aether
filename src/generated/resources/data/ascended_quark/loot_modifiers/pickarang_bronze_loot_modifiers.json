@@ -1,6 +1,6 @@
 {
   "type": "ascended_quark:pickarang_aether_dungeon_loot",
-  "chanceToSpawn": 0.2,
+  "chanceToSpawn": 0.1,
   "conditions": [
     {
       "condition": "forge:loot_table_id",
@@ -16,8 +16,8 @@
           "Damage": 0
         }
       },
-      "weight": 5
+      "weight": 1
     }
   ],
-  "totalWeight": 70
+  "totalWeight": 100
 }

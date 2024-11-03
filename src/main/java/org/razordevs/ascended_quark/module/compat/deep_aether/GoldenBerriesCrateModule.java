@@ -12,6 +12,6 @@ public class GoldenBerriesCrateModule extends ZetaModule {
 
     @LoadEvent
     public void register(ZRegister register) {
-        CompressedBlockModule.crate("goldleaf_berry", MapColor.COLOR_YELLOW, true, this);
+        CompressedBlockModule.crate("goldenleaf_berries", MapColor.COLOR_YELLOW, true, this);
     }
 }

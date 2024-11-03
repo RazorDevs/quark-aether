@@ -11,11 +11,11 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "ascended_quark:goldleaf_berry_crate"
+          "name": "ascended_quark:goldenleaf_berries_crate"
         }
       ],
       "rolls": 1.0
     }
   ],
-  "random_sequence": "ascended_quark:blocks/goldleaf_berry_crate"
+  "random_sequence": "ascended_quark:blocks/goldenleaf_berries_crate"
 }

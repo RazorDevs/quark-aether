@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "A": {
+      "item": "deep_aether:goldenleaf_berries"
+    }
+  },
+  "pattern": [
+    "AAA",
+    "AAA",
+    "AAA"
+  ],
+  "result": {
+    "item": "ascended_quark:goldenleaf_berries_crate"
+  },
+  "conditions": [
+    {
+      "type": "ascended_quark:flag",
+      "flag": "goldenleaf_berries_crate.json"
+    }
+  ]
+}

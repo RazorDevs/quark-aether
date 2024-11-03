@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/cube_bottom_top",
-  "textures": {
-    "bottom": "ascended_quark:block/crate_bottom",
-    "side": "ascended_quark:block/goldleaf_berry_crate",
-    "top": "ascended_quark:block/goldleaf_berry_crate_top"
-  }
-}

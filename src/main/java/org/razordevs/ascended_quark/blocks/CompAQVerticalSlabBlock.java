@@ -1,5 +1,6 @@
 package org.razordevs.ascended_quark.blocks;
 
+import com.aetherteam.aether.block.AetherBlocks;
 import com.aetherteam.aether.item.AetherCreativeTabs;
 import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.Block;
@@ -21,7 +22,7 @@ public class CompAQVerticalSlabBlock extends VerticalSlabBlock implements IZetaB
     private BooleanSupplier enabledSupplier;
 
     @SuppressWarnings("unchecked")
-    public CompAQVerticalSlabBlock(String registryName, Supplier<? extends Block> parent, Properties properties, ZetaModule module) {
+    public CompAQVerticalSlabBlock(String registryName, RegistryObject<? extends ItemLike> parent, Properties properties, ZetaModule module) {
         super((Supplier<Block>) parent, properties);
         this.enabledSupplier = BooleanSuppliers.TRUE;
         AscendedQuark.ZETA.registry.registerBlock(this, registryName, true);
@@ -30,10 +31,10 @@ public class CompAQVerticalSlabBlock extends VerticalSlabBlock implements IZetaB
         if (module.category.isAddon()) {
             module.zeta.requiredModTooltipHandler.map(this, module.category.requiredMod);
         }
-        RegistryUtil.addCreativeModeTab(AetherCreativeTabs.AETHER_BUILDING_BLOCKS.getKey(), this, (RegistryObject<? extends ItemLike>) parent, module);
+        RegistryUtil.addCreativeModeTab(AetherCreativeTabs.AETHER_BUILDING_BLOCKS.getKey(), this, parent, module);
     }
     public CompAQVerticalSlabBlock(String registryName, Properties properties, ZetaModule module) {
-        this(registryName, () -> Blocks.STONE_SLAB, properties, module);
+        this(registryName, AetherBlocks.ANGELIC_STONE, properties, module);
     }
 
         public CompAQVerticalSlabBlock setCondition(BooleanSupplier enabledSupplier) {

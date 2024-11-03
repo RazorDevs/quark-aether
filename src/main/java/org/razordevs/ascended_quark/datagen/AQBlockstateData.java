@@ -53,7 +53,7 @@ public class AQBlockstateData extends AetherBlockStateProvider {
         this.verticalPLank("skyroot", AetherBlocks.SKYROOT_PLANKS.get(), "construction/");
         this.pillar((RotatedPillarBlock) blockMap.get("skyroot_stick_block"));
         this.compressed("blue_berry_crate");
-        this.compressed("goldleaf_berry_crate");
+        this.compressed("goldenleaf_berries_crate");
         this.hollowLog("skyroot", AetherBlocks.SKYROOT_LOG.get(), AetherBlocks.STRIPPED_SKYROOT_LOG.get(), "natural/");
         this.post("skyroot", AetherBlocks.SKYROOT_LOG.get(), "natural/");
         this.strippedPost("skyroot", AetherBlocks.STRIPPED_SKYROOT_LOG.get(), "natural/");
