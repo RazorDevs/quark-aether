@@ -2,6 +2,8 @@ package org.razordevs.ascended_quark.module.compat.deep_aether;
 
 import com.aetherteam.aether.item.AetherCreativeTabs;
 import net.minecraft.world.level.block.Block;
+import net.minecraftforge.fml.ModList;
+import org.razordevs.ascended_quark.AscendedQuark;
 import org.razordevs.ascended_quark.blocks.AQHedgeBlock;
 import org.razordevs.ascended_quark.blocks.AQLeafCarpetBlock;
 import org.razordevs.ascended_quark.util.WoodSetContext;
@@ -17,6 +19,8 @@ public class DeepAetherWoodModule extends ZetaModule {
 
     @LoadEvent
     public void register(ZRegister register) {
+        if(!ModList.get().isLoaded(AscendedQuark.DEEP_AETHER)) return;
+
         // ROSEROOT
 
         if(this.enabled) RegistryUtil.registerWoodsetExtension("roseroot", this, new WoodSetContext(DABlocks.ROSEROOT_SLAB, DABlocks.ROSEROOT_PLANKS, DABlocks.ROSEROOT_FENCE, DABlocks.ROSEROOT_LOG, DABlocks.ROSEROOT_LEAVES));
