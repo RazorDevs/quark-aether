@@ -11,6 +11,7 @@ import net.minecraft.world.level.block.*;
 import net.minecraftforge.common.Tags;
 import net.minecraftforge.common.data.BlockTagsProvider;
 import net.minecraftforge.common.data.ExistingFileHelper;
+import net.minecraftforge.fml.ModList;
 import org.razordevs.ascended_quark.AscendedQuark;
 import org.razordevs.ascended_quark.blocks.AQHedgeBlock;
 import org.razordevs.ascended_quark.blocks.AQHollowLogBlock;
@@ -100,6 +101,7 @@ public class AQBlockTagData extends BlockTagsProvider {
                 blockMap.get("blue_berry_crate"),
                 blockMap.get("goldenleaf_berries_crate")
         );
+
         blockMap.keySet().forEach(block -> {
             for(String type : AQItemTagData.Wood) {
                 if(block.contains(type)) {

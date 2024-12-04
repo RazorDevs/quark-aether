@@ -47,6 +47,11 @@ public class CompressedBlockModule extends ZetaModule {
         if (compost) compostable.add(block);
     }
 
+    public static void disabledCrate(String name, MapColor color, boolean compost, ZetaModule module) {
+        Block block = (new ZetaFlammableBlock(name + "_crate", module, 150, BlockBehaviour.Properties.of().mapColor(color).ignitedByLava().strength(1.5F).sound(SoundType.WOOD)));
+        if (compost) compostable.add(block);
+    }
+
     private static void pillar(String name, MapColor color, boolean compost, BooleanSupplier cond, int flammability, ZetaModule module) {
         Block block = (new ZetaFlammablePillarBlock(name + "_block", module, flammability, BlockBehaviour.Properties.of().mapColor(color).ignitedByLava().strength(0.5F).sound(SoundType.WOOD))).setCondition(cond);
         RegistryUtil.addCreativeModeTab(AetherCreativeTabs.AETHER_BUILDING_BLOCKS.getKey(), block, AetherBlocks.SKYROOT_PLANKS, module);

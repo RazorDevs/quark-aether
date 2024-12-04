@@ -23,7 +23,6 @@ import teamrazor.deepaether.init.DABlocks;
 @ZetaLoadModule(category = "aether", name = "Ascended Quark Vertical Slabs")
 public class AQVerticalSlabModule extends ZetaModule {
 
-
     @LoadEvent
     public void postRegister(ZRegister.Post e) {
         new CompAQVerticalSlabBlock("angelic_vertical_slab", AetherBlocks.ANGELIC_STONE, BlockBehaviour.Properties.of().mapColor(MapColor.SAND).instrument(NoteBlockInstrument.BASEDRUM).strength(0.5F, 6.0F).requiresCorrectToolForDrops(),this);

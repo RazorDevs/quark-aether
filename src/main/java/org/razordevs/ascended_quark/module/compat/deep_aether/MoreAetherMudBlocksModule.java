@@ -6,6 +6,7 @@ import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraftforge.fml.ModList;
+import net.minecraftforge.fml.common.Mod;
 import org.razordevs.ascended_quark.AscendedQuark;
 import org.razordevs.ascended_quark.blocks.AetherMudBrickLatticeBlock;
 import org.razordevs.ascended_quark.util.RegistryUtil;
@@ -23,15 +24,12 @@ import teamrazor.deepaether.init.DABlocks;
 public class MoreAetherMudBlocksModule extends ZetaModule {
     @LoadEvent
     public final void register(ZRegister event) {
-        if(!ModList.get().isLoaded(AscendedQuark.DEEP_AETHER)) return;
-
         BlockBehaviour.Properties props = BlockBehaviour.Properties.copy(Blocks.MUD_BRICKS);
         //RegistryUtil.addCreativeModeTab(AetherCreativeTabs.AETHER_BUILDING_BLOCKS.getKey(), new ZetaBlock("carved_aether_mud_bricks", this, props), DABlocks.AETHER_MUD_BRICKS_STAIRS);
         Block block = new ZetaPillarBlock("aether_mud_pillar", this, props);
-        if(this.enabled) RegistryUtil.addCreativeModeTab(AetherCreativeTabs.AETHER_BUILDING_BLOCKS.getKey(), block, DABlocks.AETHER_MUD_BRICKS_STAIRS, this);
+        if(this.enabled && ModList.get().isLoaded(AscendedQuark.DEEP_AETHER)) RegistryUtil.addCreativeModeTab(AetherCreativeTabs.AETHER_BUILDING_BLOCKS.getKey(), block, DABlocks.AETHER_MUD_BRICKS_STAIRS, this);
 
         block = new AetherMudBrickLatticeBlock(this, props);
-        if(this.enabled) RegistryUtil.addCreativeModeTab(AetherCreativeTabs.AETHER_BUILDING_BLOCKS.getKey(), block, DABlocks.AETHER_MUD_BRICKS_STAIRS, this);
-
+        if(this.enabled && ModList.get().isLoaded(AscendedQuark.DEEP_AETHER)) RegistryUtil.addCreativeModeTab(AetherCreativeTabs.AETHER_BUILDING_BLOCKS.getKey(), block, DABlocks.AETHER_MUD_BRICKS_STAIRS, this);
     }
 }
