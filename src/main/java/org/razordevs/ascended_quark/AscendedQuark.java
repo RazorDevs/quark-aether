@@ -111,7 +111,7 @@ public class AscendedQuark {
     }
 
     @Deprecated(forRemoval = true)
-    @ApiStatus.ScheduledForRemoval(inVersion = "1.22")
+    @ApiStatus.ScheduledForRemoval(inVersion = "1.21.1")
     public void missingMappings(MissingMappingsEvent event) {
         Stream<MissingMappingsEvent.Mapping<Block>> stream = event.getMappings(ForgeRegistries.Keys.BLOCKS, AscendedQuark.MODID).stream();
         stream.filter(mapping -> mapping.getKey().getPath().contains("brick_"))

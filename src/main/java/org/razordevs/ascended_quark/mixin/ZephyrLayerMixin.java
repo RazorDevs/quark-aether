@@ -1,5 +1,6 @@
 package org.razordevs.ascended_quark.mixin;
 
+import com.aetherteam.aether.AetherConfig;
 import com.aetherteam.aether.client.renderer.entity.layers.ZephyrTransparencyLayer;
 import com.aetherteam.aether.client.renderer.entity.model.ZephyrModel;
 import com.aetherteam.aether.entity.monster.Zephyr;
@@ -13,28 +14,35 @@ import net.minecraft.client.renderer.entity.RenderLayerParent;
 import net.minecraft.client.renderer.entity.layers.RenderLayer;
 import net.minecraft.resources.ResourceLocation;
 import org.razordevs.ascended_quark.module.AetherVariantAnimalTexturesModule;
+import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
-import org.spongepowered.asm.mixin.Unique;
-
-import java.util.Objects;
+import org.spongepowered.asm.mixin.Shadow;
+import org.spongepowered.asm.mixin.injection.At;
+import org.spongepowered.asm.mixin.injection.Inject;
+import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 @Mixin(value = ZephyrTransparencyLayer.class)
-public class ZephyrLayerMixin extends RenderLayer<Zephyr, EntityModel<Zephyr>> {
-    private final ZephyrModel transparency;
+public abstract class ZephyrLayerMixin extends RenderLayer<Zephyr, EntityModel<Zephyr>> {
 
-    public ZephyrLayerMixin(RenderLayerParent<Zephyr, EntityModel<Zephyr>> entityRenderer, ZephyrModel transparencyModel) {
-        super(entityRenderer);
-        this.transparency = transparencyModel;
+    @Shadow(remap = false) @Final private ZephyrModel transparency;
+
+    public ZephyrLayerMixin(RenderLayerParent<Zephyr, EntityModel<Zephyr>> p_117346_) {
+        super(p_117346_);
     }
 
 
-    public void render(PoseStack poseStack, MultiBufferSource buffer, int packedLight, Zephyr zephyr, float limbSwing, float limbSwingAmount, float partialTicks, float ageInTicks, float netHeadYaw, float headPitch) {
-        if (this.getParentModel() instanceof ZephyrModel && !zephyr.isInvisible()) {
-            this.getParentModel().copyPropertiesTo(this.transparency);
-            this.transparency.prepareMobModel(zephyr, limbSwing, limbSwingAmount, partialTicks);
-            this.transparency.setupAnim(zephyr, limbSwing, limbSwingAmount, ageInTicks, netHeadYaw, headPitch);
-            VertexConsumer consumer = buffer.getBuffer(RenderType.entityTranslucent(Objects.requireNonNull(AetherVariantAnimalTexturesModule.Client.getZephyrLayerTexture(zephyr))));
-            this.transparency.renderToBuffer(poseStack, consumer, packedLight, LivingEntityRenderer.getOverlayCoords(zephyr, 0.0F), 1.0F, 1.0F, 1.0F, 1.0F);
+    @Inject(at = @At("HEAD"), method = "render(Lcom/mojang/blaze3d/vertex/PoseStack;Lnet/minecraft/client/renderer/MultiBufferSource;ILcom/aetherteam/aether/entity/monster/Zephyr;FFFFFF)V", remap = false)
+    public void render(PoseStack poseStack, MultiBufferSource buffer, int packedLight, Zephyr zephyr, float limbSwing, float limbSwingAmount, float partialTicks, float ageInTicks, float netHeadYaw, float headPitch, CallbackInfo ci) {
+        ResourceLocation location = AetherVariantAnimalTexturesModule.Client.getZephyrLayerTexture(zephyr);
+
+        if(!AetherConfig.CLIENT.legacy_models.get() && location != null) {
+            if (this.getParentModel() instanceof ZephyrModel && !zephyr.isInvisible()) {
+                this.getParentModel().copyPropertiesTo(this.transparency);
+                this.transparency.prepareMobModel(zephyr, limbSwing, limbSwingAmount, partialTicks);
+                this.transparency.setupAnim(zephyr, limbSwing, limbSwingAmount, ageInTicks, netHeadYaw, headPitch);
+                VertexConsumer consumer = buffer.getBuffer(RenderType.entityTranslucent(location));
+                this.transparency.renderToBuffer(poseStack, consumer, packedLight, LivingEntityRenderer.getOverlayCoords(zephyr, 0.0F), 1.0F, 1.0F, 1.0F, 1.0F);
+            }
         }
 
     }
