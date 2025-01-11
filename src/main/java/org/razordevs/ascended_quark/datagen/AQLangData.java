@@ -7,7 +7,6 @@ import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.SlabBlock;
 import net.minecraft.world.level.block.StairBlock;
 import net.minecraft.world.level.block.WallBlock;
-import net.minecraftforge.registries.RegistryObject;
 import org.codehaus.plexus.util.StringUtils;
 import org.razordevs.ascended_quark.AscendedQuark;
 import org.razordevs.ascended_quark.blocks.AQHollowLogBlock;
@@ -18,7 +17,6 @@ import org.violetmoon.quark.content.building.block.VariantLadderBlock;
 import org.violetmoon.quark.content.building.block.VerticalSlabBlock;
 
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.HashMap;
 import java.util.List;
 
@@ -87,6 +85,7 @@ public class AQLangData extends NitrogenLanguageProvider {
         this.add("lore.block.ascended_quark.skyroot_chest", "A nice looking chest made out of Skyroot. Perfect blend for your storage room.");
         this.add("lore.block.ascended_quark.skyroot_stool", "Stools can be created the same way you'd make a Bed, but using slabs instead of full wood blocks. As you can expect, you can sit on them!");
         this.add("lore.block.ascended_quark.skyroot_stick_block", "Cool looking pillar to store your sticks, or to integrate them into your builds!");
+        this.add("ascended_quark.misc.configure_ascended_quark_here", "Configure Ascended Quark Here!");
 
         addBricksLore(blockMap.get("quicksoil_bricks"));
         addBricksLore(blockMap.get("aether_dirt_bricks"));
