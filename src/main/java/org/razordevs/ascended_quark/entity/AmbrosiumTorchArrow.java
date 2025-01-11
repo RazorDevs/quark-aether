@@ -79,7 +79,7 @@ public class AmbrosiumTorchArrow extends AbstractArrow {
                 if (direction == Direction.UP) {
                     setState = AetherBlocks.AMBROSIUM_TORCH.get().defaultBlockState();
                 } else {
-                    setState =  AetherBlocks.AMBROSIUM_TORCH.get().defaultBlockState().setValue(WallTorchBlock.FACING, direction);
+                    setState =  AetherBlocks.AMBROSIUM_WALL_TORCH.get().defaultBlockState().setValue(WallTorchBlock.FACING, direction);
                 }
 
                 if (setState.canSurvive(this.level(), finalPos)) {
